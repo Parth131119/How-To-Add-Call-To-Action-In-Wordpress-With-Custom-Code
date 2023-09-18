@@ -1,0 +1,68 @@
+
+
+
+
+<div class="make_slide"><a href="tel:0430153489"><img src="<?php echo get_bloginfo('template_url') ?>/images/phone.png"/></a></div> 
+<div class="slide-out-div">    
+        <a class="handle" href="#">Quote</a>     
+        <div><?php echo do_shortcode('[contact-form-7 id="7" title="Get A Free Quote"]');?></div>        
+</div>
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.tabSlideOut.v1.3.js"></script>
+<script>jQuery(function(){
+	screenWidth = window.screen.width;
+	
+	if(screen.width > 1024){
+		//alert(screenWidth);
+		jQuery('.slide-out-div').tabSlideOut({
+			 tabHandle: '.handle',                              //class of the element that will be your tab
+			 pathToTabImage: 'http://binary-trends.com/priorityelectrical/wp-content/uploads/2017/11/get-free-quote-vert.png',     //path to the image for the tab (optionaly can be set using css)
+			 imageHeight: '195px',                               //height of tab image
+			 imageWidth: '42px',                               //width of tab image    
+			 tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
+			 speed: 300,                                        //speed of animation
+			 action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+			 topPos: '270px',                                  //position from the top
+			 fixedPosition: true 
+			                               //options: true makes it stick(fixed position) on scroll
+		 });
+	}else{
+		//alert('new');
+		jQuery('.slide-out-div').tabSlideOut({
+			tabHandle: '.handle',                              //class of the element that will be your tab
+			pathToTabImage: 'http://binary-trends.com/priorityelectrical/wp-content/uploads/2017/11/get-free-quote-hori.png',     //path to the image for the tab (optionaly can be set using css)
+			imageHeight: '37px',                               //height of tab image
+			imageWidth: '159px',                               //width of tab image    
+			tabLocation: 'bottom',                               //side of screen where tab lives, top, right, bottom, or left
+			speed: 300,                                        //speed of animation
+			rightPos: '0px',
+			action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+			fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
+		});
+	}
+});</script>
+
+
+<style type="text/css">
+.make_slide {
+    float: left;
+    height: 60px;
+    position: fixed;
+    right: -230px;
+    top: 185px;
+    transition: all .4s ease-in;
+    z-index: 999;
+}
+.make_slide:hover {right: 0;}
+
+@media only screen and (max-width:767px) {
+
+.make_slide:hover {
+    right: -230px;
+}
+
+}
+
+.slide-out-div {padding: 20px;width: 250px;background: #383636;position: fixed;z-index: 999;}
+
+</style>
